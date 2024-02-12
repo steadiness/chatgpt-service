@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}"
+          href="../css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT</title>
+    <!-- link rel="stylesheet" href="style.css"-->
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-header">
+        <h1>ChatGPT</h1>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <!-- 메시지 출력 영역 -->
+    </div>
+    <div class="chat-form">
+        <input type="text" id="userInput" placeholder="Enter your message here...">
+        <button id="sendButton">Send</button>
+    </div>
+</div>
+
+<!--JS -->
+<script src="/js/chat.js"></script>
+
+</body>
+</html>
