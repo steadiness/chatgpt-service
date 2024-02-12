@@ -33,6 +33,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.core:jackson-databind")
 	implementation("com.fasterxml.jackson.core:jackson-annotations")
 
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	testCompileOnly 'org.projectlombok:lombok' // 테스트 의존성 추가
 	testAnnotationProcessor 'org.projectlombok:lombok' // 테스트 의존성 추가

@@ -7,12 +7,16 @@ document.getElementById('sendButton').addEventListener('click', function() {
 });
 
 async function sendMessage(role, content) {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const csrfHeader = document.querySelector('meta[name="csrf-header"]').getAttribute('content');
+
     const responseElement = document.getElementById('chatMessages');
     try {
         const response = await fetch('/openai-chat/chat/question', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                [csrfHeader]: csrfToken,
             },
             body: JSON.stringify({role: role, content: content }),
         });
