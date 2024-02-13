@@ -27,7 +27,9 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests(authorizeRequests ->
-                        authorizeRequests.anyRequest().authenticated()
+                        authorizeRequests
+                                .requestMatchers("/css/**", "/js/**").permitAll() // CSS와 JS 경로에 대한 접근 허용
+                                .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
                                 formLogin

@@ -22,8 +22,14 @@ async function sendMessage(role, content) {
         });
         const data = await response.json();
 
-        responseElement.innerHTML += `<div class="message">You: ${content}</div>`;
-        responseElement.innerHTML += `<div class="message">GPT: ${data.message.content}</div>`;
+        //responseElement.innerHTML += `<div class="message">You: ${content}</div>`;
+        //responseElement.innerHTML += `<div class="message">GPT: ${data.message.content}</div>`;
+
+        // 사용자 메시지 추가
+        responseElement.innerHTML += `<div class="message message-user">You: ${content}</div>`;
+
+        // GPT 답변 메시지 추가
+        responseElement.innerHTML += `<div class="message message-gpt">GPT: ${data.message.content}</div>`;
 
         document.getElementById('userInput').value = ''; // Clear input field after sending
 
